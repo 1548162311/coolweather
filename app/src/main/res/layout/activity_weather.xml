@@ -6,16 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
-    <!--<android.support.v4.widget.SwipeRefreshLayout-->
-        <!--android:id="@+id/swip_refresh"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:visibility="invisible">-->
+
     <ImageView
         android:id="@+id/bingpic_img"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swip_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ScrollView
         android:id="@+id/weather_layout"
         android:layout_width="match_parent"
@@ -34,5 +38,13 @@
             <include layout="@layout/suggestion"/>
         </LinearLayout>
     </ScrollView>
-    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+        <fragment
+            android:id="@+id/choose_area_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.coolweather.android.fragment.ChooseAreaFragment"
+            android:layout_gravity="start"/>
+    </android.support.v4.widget.DrawerLayout>
 </FrameLayout>
